@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#050507" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>The Last Night: Shadow House</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loading">
+    <div class="load-title">THE LAST NIGHT</div>
+    <div class="load-sub">SHADOW HOUSE</div>
+    <div class="load-bar"><div id="load-progress"></div></div>
+    <div id="load-text">Loading...</div>
+  </div>
+
+  <div id="menu" class="screen">
+    <div class="menu-card">
+      <div class="glitch-title">THE LAST NIGHT</div>
+      <div class="menu-sub">SHADOW HOUSE</div>
+      <button id="playBtn">PLAY</button>
+      <button id="continueBtn">CONTINUE</button>
+      <button id="settingsBtn">SETTINGS</button>
+      <button id="howBtn">HOW TO PLAY</button>
+      <button id="creditsBtn">CREDITS</button>
+      <div class="tiny">A browser horror prototype optimized for Android</div>
+    </div>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div id="objective">OBJECTIVE: Find the first key.</div>
+    <div class="bars">
+      <div><span>HP</span><div class="bar"><i id="healthBar"></i></div></div>
+      <div><span>STAMINA</span><div class="bar"><i id="staminaBar"></i></div></div>
+      <div><span>BATTERY</span><div class="bar"><i id="batteryBar"></i></div></div>
+    </div>
+    <div id="fearVignette"></div>
+    <div id="interactHint">INTERACT</div>
+    <div id="pickup"></div>
+
+    <div id="joystick"><div id="stick"></div></div>
+    <div id="lookZone"></div>
+    <div class="actions">
+      <button id="flashBtn">☼</button>
+      <button id="sprintBtn">RUN</button>
+      <button id="crouchBtn">CROUCH</button>
+      <button id="inventoryBtn">BAG</button>
+      <button id="pauseBtn">Ⅱ</button>
+    </div>
+  </div>
+
+  <div id="inventory" class="panel hidden">
+    <h2>INVENTORY</h2>
+    <div id="items"></div>
+    <button class="closePanel">CLOSE</button>
+  </div>
+
+  <div id="settings" class="panel hidden">
+    <h2>SETTINGS</h2>
+    <label>Sensitivity <input id="sens" type="range" min="0.5" max="2" step="0.1" value="1"></label>
+    <label>Volume <input id="volume" type="range" min="0" max="1" step="0.05" value="0.65"></label>
+    <label>Quality
+      <select id="quality"><option value="low">LOW</option><option value="medium" selected>MEDIUM</option><option value="high">HIGH</option></select>
+    </label>
+    <label class="check"><input id="vibration" type="checkbox" checked> Vibration</label>
+    <button class="closePanel">CLOSE</button>
+  </div>
+
+  <div id="how" class="panel hidden">
+    <h2>HOW TO PLAY</h2>
+    <p>Gunakan joystick kiri untuk bergerak. Geser area kanan untuk melihat.</p>
+    <p>Gunakan FLASHLIGHT untuk menerangi rumah. SPRINT memakai stamina.</p>
+    <p>Dekati benda penting dan tekan INTERACT. Cari kunci, catatan, baterai, lalu pecahkan puzzle.</p>
+    <p>THE SHADOW dapat mendengar langkahmu. Jangan terlalu lama berada di tempat gelap.</p>
+    <button class="closePanel">CLOSE</button>
+  </div>
+
+  <div id="pause" class="panel hidden">
+    <h2>PAUSED</h2>
+    <button id="resumeBtn">RESUME</button>
+    <button id="saveBtn">SAVE</button>
+    <button id="menuBtn">MAIN MENU</button>
+  </div>
+
+  <div id="ending" class="panel hidden">
+    <h2 id="endingTitle"></h2>
+    <p id="endingText"></p>
+    <button id="endingMenu">MAIN MENU</button>
+  </div>
+
+  <div id="toast"></div>
+  <canvas id="game"></canvas>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
